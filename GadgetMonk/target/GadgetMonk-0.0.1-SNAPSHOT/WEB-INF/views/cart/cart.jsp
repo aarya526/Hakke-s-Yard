@@ -12,6 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Your Cart</title>
 <style>
 .parallax{
@@ -299,6 +300,7 @@ Clear Cart
 <tr>
 <th>Icon</th>
 <th>ProductName</th>
+<th>Description</th>
 <th>Quantity</th>
 <th>Total Price</th>
 <th>Remove</th>
@@ -308,8 +310,9 @@ Clear Cart
 <tbody id="tbody"><!-- cartItems is List<CartItem>, cartItem is CartItem obj -->
 <c:forEach items="${cartItems }" var="cartItem">
 <tr>
-<td><img class = "img img-thumbnail img-responsive" style = "width:200px;" src = "${pageContext.request.contextPath }/resources/${cartItem.product.imageUrl}"/></td>
+<td><img class = "img img-thumbnail img-responsive" style = "width:100px;" src = "${pageContext.request.contextPath }/resources/${cartItem.product.imageUrl}"/></td>
 <td>${cartItem.product.productname }</td>
+<td>${cartItem.product.description }</td>
 <td>${cartItem.quantity }</td>
 <td>${cartItem.totalPrice }</td>
 <c:set var="totalPrice" value="${totalPrice + cartItem.totalPrice }"></c:set>

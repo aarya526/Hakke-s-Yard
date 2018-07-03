@@ -288,7 +288,7 @@ $(document).ready(function(){
    
 </script>
 </head>
-<body background="resources/images/Playstation images/gamers.jpg">
+<body background="${pageContext.request.contextPath}/resources/images/Playstation images/gamers.jpg">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container">
 <br>
@@ -300,8 +300,13 @@ $(document).ready(function(){
 
 	<div class="card card-product" >
 		<div class="img-wrap"> 
-			<img class="img img-thumbnail" src="${pageContext.request.contextPath }/resources/${product.imageUrl }">
+			<img class="img img-thumbnail" data-toggle="tooltip" title="Description: ${product.description },Price: Rs. ${product.price},Quantity Left: ${product.quantity}"  src="${pageContext.request.contextPath }/resources/${product.imageUrl }">
 		</div>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 		<div class="info-wrap">
 			<h6 class="title text-dots"><a href="#">${product.productname }</a></h6>
 			<div class="action-wrap">

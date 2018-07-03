@@ -292,14 +292,13 @@ $(document).ready(function(){
 <div class="container">
 
 
-<div class="container">
+<div class="container" >
 
 
 <div class="row">
 
-<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
-
-<div >
+<div class=" col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3" >
+<div style = "width:650px; background-color:lightgrey;">
 <h1 align="center">Invoice</h1>
 </div>
 ORDER ID: ${customerorder.orderId }
@@ -318,7 +317,7 @@ ${customerorder.user.customer.shippingaddress.zipcode}
 </address>
 </div>
 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-<p>Shipping Date: ${customerorder.purchaseDate }</p>
+<p style = "color:black;">Shipping Date: ${customerorder.purchaseDate }</p>
 </div>
 </div>
 <hr>

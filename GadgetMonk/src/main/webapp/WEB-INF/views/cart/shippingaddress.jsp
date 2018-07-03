@@ -290,7 +290,7 @@ $(document).ready(function(){
 <jsp:include page="header.jsp"></jsp:include>
 <div class = "container" style = "width:450px; height:auto; background-color:lightgrey; border-radius:10px; margin-top:50px;">
 <h3>Update Shipping Address......</h3>
-<form:form action = "${pageContext.request.contextPath }/cart/createorder" modelAttribute = "shippingaddress">
+<form:form action = "${pageContext.request.contextPath }/cart/payoption" modelAttribute = "shippingaddress">
  <table class = "table">
  <form:hidden path="id"/>
   <tr>

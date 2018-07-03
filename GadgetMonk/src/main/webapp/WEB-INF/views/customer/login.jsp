@@ -251,7 +251,7 @@ $(document).ready(function(){
 <div class="form-group" style="margin-top:50px;">
 <input type="text" class="form-control"  placeholder="Enter Username" name="j_username"/>
 <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="j_password"/>
-<a href="#" style="float:left; margin-left:2px; margin-bottom:20px;">Forgot Password?</a>
+
 </div>
 <input type="submit" name="submit" value="Login!" class=" btn btn-primary" style="width:300px; border-radius:5px; margin-bottom:20px;"/>
 
