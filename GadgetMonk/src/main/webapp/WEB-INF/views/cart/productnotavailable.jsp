@@ -288,7 +288,8 @@ $(document).ready(function(){
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<spring:url value="${productNA }" var = "product"/>
-<h1>${product}.... is Currently out of stock</h1> 
+<div class = "jumbotron">
+<h4>This Product is Currently out of stock</h4> 
+</div>
 </body>
 </html>

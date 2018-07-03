@@ -26,7 +26,7 @@ public class Product {
 	@NotEmpty(message = "Description is Mandatory")
 	private String description;
 	
-	@Min(value = 1)
+	@Min(value = 0)
 	private int quantity;
 	
 	@Min(value = 3499)

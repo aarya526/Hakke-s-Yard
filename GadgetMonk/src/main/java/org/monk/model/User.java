@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 @Entity 
 public class User {
 
@@ -21,7 +24,7 @@ public class User {
 	@OneToOne(mappedBy = "user")
 	private Customer customer;
 
-	@OneToOne(mappedBy = "user")
+	@NotEmpty(message = "email is mandatory")
 	public String getEmail() {
 		return email;
 	}
@@ -30,6 +33,7 @@ public class User {
 		this.email = email;
 	}
 
+	@NotEmpty(message = "password is mandatory")
 	public String getPassword() {
 		return password;
 	}

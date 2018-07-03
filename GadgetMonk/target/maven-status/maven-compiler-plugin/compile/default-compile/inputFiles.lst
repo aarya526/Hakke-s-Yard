@@ -1,5 +1,6 @@
 /Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/config/SpringSecurityConfig.java
 /Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/model/Product.java
+/Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/model/CustomerOrder.java
 /Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/controller/CartItemController.java
 /Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/config/HibernateConfig.java
 /Users/Abhishek/Desktop/Hakke's Yard/GadgetMonk/src/main/java/org/monk/dao/CartItemDao.java

@@ -48,7 +48,7 @@
 </button>
 <div class="dropdown-menu" >
 <a class="dropdown-item" href="${pageContext.request.contextPath }/gallery">Gamer's Gallery</a>
-<a class="dropdown-item" href="${pageContext.request.contextPath }/customer/add">Sign up</a>
+<a class="dropdown-item" href="${pageContext.request.contextPath }/all/register">Sign up</a>
 </div>
 </div>
 </c:if>
@@ -60,6 +60,7 @@
 <span class="caret"></span> 
 </button>
 <div class="dropdown-menu" >
+<a class="dropdown-item" href="${pageContext.request.contextPath }/gallery">Gamers Gallery</a>
 <a class="dropdown-item" href="<c:url value='/cart/purchaseDetails'></c:url>"><span class="glyphicon glyphicon-shopping-cart"></span>My Cart (${sessionScope.cartSize })</a>
 <a class="dropdown-item" href="${pageContext.request.contextPath }/logout">Logout</a>
 </div>

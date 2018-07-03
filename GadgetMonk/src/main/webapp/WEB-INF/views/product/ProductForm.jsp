@@ -226,7 +226,7 @@ $(document).ready(function(){
   <div class="form-group">
    <label for="company">Company: </label>
    <form:input class="form-control" placeholder="Enter Company Name" path="company"/>
-   <form:errors path="company" class="erros"/>
+   <form:errors path="company" class="errors"/>
   </div>
   <div class="form-group">
     <label for="description" >Description: </label>

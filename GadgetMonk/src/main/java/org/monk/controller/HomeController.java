@@ -39,7 +39,9 @@ public class HomeController {
 		List <Product> list = productDao.listAllProducts();
 		model.addObject("list",list);
 		return model;
-	}
+		
+		}
+	
 	
 	@RequestMapping(value = "/viewSingleProduct/{productId}")
 	public ModelAndView viewSingleProduct(@PathVariable("productId") int productId) {

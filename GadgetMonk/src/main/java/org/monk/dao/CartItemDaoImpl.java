@@ -32,6 +32,7 @@ public class CartItemDaoImpl implements CartItemDao
 		return user;
 	}
 
+	
 	public void saveOrUpdateCartItem(CartItem cartItem) {
 		
 		getSession().saveOrUpdate(cartItem);
@@ -39,6 +40,7 @@ public class CartItemDaoImpl implements CartItemDao
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public List<CartItem> getCartItems(String email) {
 		Query query = getSession().createQuery("from CartItem where user.email = ?");
 		query.setString(0, email);
@@ -59,5 +61,8 @@ public class CartItemDaoImpl implements CartItemDao
 		 getSession().save(customerOrder);
 		 return customerOrder;
 	}
+
+
+
 
 }

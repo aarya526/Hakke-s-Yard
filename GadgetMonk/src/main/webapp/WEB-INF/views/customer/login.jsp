@@ -16,7 +16,8 @@
   <style>
   .login{
   width:350px;
-  height:400px;
+  height:auto;
+  border-radius:5px;
   justify-content:center;
   margin-top:50px;
   background-color:white;
@@ -236,12 +237,11 @@ $(document).ready(function(){
     </div>
   </div> 
 </nav>
-<div class="container">
-<center>
+<div class="container" style = "width: 450px; height:auto;">
 <div class="login">
 <div class="loginLogo bg-dark">
 <a  class="close btn btn-dark" style = "margin-top:5px;" href="${pageContext.request.contextPath }/home" >&times;</a>
-<h4 ><font color="white" style="margin-top:50px;">Gadget Monk</font></h4>
+<h4><font  style="margin-top:50px; margin-left:100px; color:white;">Gadget Monk</font></h4>
 </div>
 
 <div style="padding:20px; margin-top:20px;" >
@@ -255,12 +255,11 @@ $(document).ready(function(){
 </div>
 <input type="submit" name="submit" value="Login!" class=" btn btn-primary" style="width:300px; border-radius:5px; margin-bottom:20px;"/>
 
-<button type="button" onClick="window.location.href='customer/add'"class=" btn btn-secondary" style="width:300px; border-radius:5px;"><b>Create New Account</b></button>
+<button type="button" onClick="window.location.href='all/register'"class=" btn btn-secondary" style="width:300px; border-radius:5px;"><b>Create New Account</b></button>
 <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 </form>
 </div>
 </div>
-</center>
 </div>
 </body>
 </html>

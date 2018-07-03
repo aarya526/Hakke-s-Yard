@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class ShippingAddress {
 
@@ -13,6 +15,7 @@ public class ShippingAddress {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
+	
 	private String apartmentnumber;
 	
 	private String streetname;
@@ -33,6 +36,7 @@ public class ShippingAddress {
 		this.id = id;
 	}
 
+	@NotEmpty(message = "apartmentnumber is mandatory")
 	public String getApartmentnumber() {
 		return apartmentnumber;
 	}
@@ -41,6 +45,7 @@ public class ShippingAddress {
 		this.apartmentnumber = apartmentnumber;
 	}
 
+	@NotEmpty(message = "streetname is mandatory")
 	public String getStreetname() {
 		return streetname;
 	}
@@ -49,6 +54,7 @@ public class ShippingAddress {
 		this.streetname = streetname;
 	}
 
+	@NotEmpty(message = "city is mandatory")
 	public String getCity() {
 		return city;
 	}
@@ -57,6 +63,7 @@ public class ShippingAddress {
 		this.city = city;
 	}
 
+	@NotEmpty(message = "state is mandatory")
 	public String getState() {
 		return state;
 	}
@@ -65,6 +72,7 @@ public class ShippingAddress {
 		this.state = state;
 	}
 
+	@NotEmpty(message = "country is mandatory")
 	public String getCountry() {
 		return country;
 	}
@@ -73,6 +81,7 @@ public class ShippingAddress {
 		this.country = country;
 	}
 
+	@NotEmpty(message = "zipcode is mandatory")
 	public String getZipcode() {
 		return zipcode;
 	}

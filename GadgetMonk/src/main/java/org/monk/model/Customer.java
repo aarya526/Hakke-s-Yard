@@ -16,18 +16,24 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
  
+	@NotEmpty(message = "firstname is mandatory")
 	private String firstname;
 
+	@NotEmpty(message = "lastname is mandatory")
 	private String lastname;
 
+	@NotEmpty(message = "phonenumber is mandatory")
 	private String phonenumber;
 
+	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
     private BillingAddress billingaddress;
 
+	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
     private ShippingAddress shippingaddress;
 
+	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
     private User user;
 

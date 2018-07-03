@@ -164,7 +164,7 @@ background-color:black;
 }
 .error{
 font-style:italic;
-color:red;
+color: rgb(166, 31, 38);
 }
   </style>
   <script>
@@ -206,52 +206,72 @@ $(document).ready(function(){
 </head>
 <body class="bg-light" background=" ${pageContext.request.contextPath }/resources/images/Playstation images/wallpaper.jpeg">
 <jsp:include page="header.jsp"></jsp:include>
-<div class = "container">
+<div class = "container" style = "width:450px; height:auto; ">
+
  <c:url value = "/save" var = "addUrl"/>
   <form:form action = "${addUrl }" modelAttribute = "customer">
+  <h3 style = "color:white; margin-left:30px;"><b>Customer Registration</b></h3>
    <form:hidden path="id"/>
    <form:label path = "firstname">Enter Firstname: </form:label>
-   <form:input type = "text" path="firstname" id = "firstname"/>
+   <form:input class = "form-control" type = "text" path="firstname" placeholder = "Enter Firstname" />
+   <form:errors style = "margin-left:100px;" class = "error" path = "firstname"/>
    <form:label path = "lastname">Enter Lastname: </form:label>
-   <form:input type = "text" path="lastname" id = "lastname"/>
+   <form:input class = "form-control" type = "text" path="lastname" placeholder = "Enter Lastname"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "lastname"/>
    <form:label path = "phonenumber">Enter Phonenumber: </form:label>
-   <form:input type = "text" path="phonenumber" id = ""/>
+   <form:input class = "form-control" type = "text" path="phonenumber" placeholder = "Enter Phonenumber"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "phonenumber"/>   
    <hr>
    <b>Login Credentials</b><br>
    <form:label path="user.email">Enter Email</form:label>
-   <form:input path="user.email" id="user.email" type="email"/>
+   <form:input class = "form-control" path="user.email" placeholder = "Enter EmailId" type="email"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "user.email"/>
    <form:label path="user.password">Enter password</form:label>
-   <form:input path="user.password" id="user.password" type="password"/>
+   <form:input class = "form-control" path="user.password" placeholder = "Enter Password" type="password"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "user.password"/>
    <hr>
    <b>Billing Address</b>
    <form:label path="billingaddress.apartmentnumber">Enter Apartment Number: </form:label>
-   <form:input type = "text" path="billingaddress.apartmentnumber" id = "billingaddress.apartmentnumber"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.apartmentnumber" placeholder = "Enter Apartmentnumber"/>
+   <form:errors style = "margin-left:70px;" class = "error" path = "billingaddress.apartmentnumber"/>
    <form:label path="billingaddress.streetname">Enter Streetname: </form:label>
-   <form:input type = "text" path="billingaddress.streetname" id = "billingaddress.streetname"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.streetname" placeholder = "Enter Streetname"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "billingaddress.streetname"/>
    <form:label path="billingaddress.city">Enter City: </form:label>
-   <form:input type = "text" path="billingaddress.city" id = "billingaddress.city"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.city" placeholder = "Enter City"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "billingaddress.city"/>
    <form:label path="billingaddress.state">Enter State: </form:label>
-   <form:input type = "text" path="billingaddress.state" id = "billingaddress.state"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.state" placeholder = "Enter State"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "billingaddress.state"/>
    <form:label path="billingaddress.country">Enter Country: </form:label>
-   <form:input type = "text" path="billingaddress.country" id = "billingaddress.country"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.country" placeholder = "Enter Country"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "billingaddress.country"/>
    <form:label path="billingaddress.zipcode">Enter Zipcode: </form:label>
-   <form:input type = "text" path="billingaddress.zipcode" id = "billingaddress.zipcode"/>
+   <form:input class = "form-control" type = "text" path="billingaddress.zipcode" placeholder = "Enter Zipcode"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "billingaddress.zipcode"/>
    <hr>
    <b>Shipping Address</b>
    <form:label path="shippingaddress.apartmentnumber">Enter Apartment Number: </form:label>
-   <form:input type = "text" path="shippingaddress.apartmentnumber" id = "shipping.apartmentnumber"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.apartmentnumber" placeholder = "Enter Apartmentnumber"/>
+   <form:errors style = "margin-left:70px;" class = "error" path = "shippingaddress.apartmentnumber"/>
    <form:label path="shippingaddress.streetname">Enter Streetname: </form:label>
-   <form:input type = "text" path="shippingaddress.streetname" id = "shipping.streetname"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.streetname" placeholder = "Enter Streetname"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "shippingaddress.streetname"/>
    <form:label path="shippingaddress.city">Enter City: </form:label>
-   <form:input type = "text" path="shippingaddress.city" id = "shippingaddress.city"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.city" placeholder = "Enter City"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "shippingaddress.city"/>
    <form:label path="shippingaddress.state">Enter State: </form:label>
-   <form:input type = "text" path="shippingaddress.state" id = "shippingaddress.state"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.state" placeholder = "Enter State"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "shippingaddress.state"/>
    <form:label path="shippingaddress.country">Enter Country: </form:label>
-   <form:input type = "text" path="shippingaddress.country" id = "shippingaddress.country"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.country" placeholder = "Enter Country"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "shippingaddress.city"/>
    <form:label path="shippingaddress.zipcode">Enter Zipcode: </form:label>
-   <form:input type = "text" path="shippingaddress.zipcode" id = "shippingaddress.zipcode"/>
+   <form:input class = "form-control" type = "text" path="shippingaddress.zipcode" placeholder = "Enter Zipcode"/>
+   <form:errors style = "margin-left:100px;" class = "error" path = "shippingaddress.zipcode"/>
    <br>
-   <input type = "submit" value = "Register"/>
+   <br>
+   <form:button type = "submit" class = "btn btn-primary">Register</form:button>
   </form:form>
 </div>
 </body>

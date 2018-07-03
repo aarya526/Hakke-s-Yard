@@ -36,7 +36,7 @@ public class CartItemController {
 	@RequestMapping(value = "/cart/addToCart/{productId}")
 	public String addToCart(@PathVariable int productId,@RequestParam int requestedQuantity,@AuthenticationPrincipal Principal principal) {
 		
-		String email = principal.getName();// EMail id of the logged in user
+		String email = principal.getName();
 		
 		List<CartItem> cartItems = cartItemDao.getCartItems(email);
 		
@@ -65,6 +65,7 @@ public class CartItemController {
 		return "redirect:/cart/purchaseDetails";
 		
 	}
+
 	
 	@RequestMapping(value = "/cart/purchaseDetails")
 	public String getPurchaseDetails(@AuthenticationPrincipal Principal principal, Model model,HttpSession session) {
@@ -84,6 +85,8 @@ public class CartItemController {
 		cartItemDao.removeCartItem(itemId);
 		return "redirect:/cart/purchaseDetails";
 	}
+	
+
 	
 	@RequestMapping(value = "/cart/clearcart")
 	public String clearCart(@AuthenticationPrincipal Principal principal) {
@@ -121,18 +124,17 @@ public class CartItemController {
 		for(CartItem cartItem : cartItems) {
 			
 			Product product = cartItem.getProduct();
-			if((product.getQuantity()-cartItem.getQuantity())<0) {
+			if((product.getQuantity()-cartItem.getQuantity()) < 0) {
 				cartItemDao.removeCartItem(cartItem.getItemId());
 				model.addAttribute("productNA",product);
 				return "cart/productnotavailable";
 			}
 		}
 		
-		//Calculate grandTotal
+		// grandTotal
 
 		double grandTotal=0;
-		for(CartItem cartItem:cartItems){//for(T o:collection)
-		
+		for(CartItem cartItem:cartItems){		
 			grandTotal=grandTotal+cartItem.getTotalPrice();
 		
 		}
@@ -140,25 +142,23 @@ public class CartItemController {
 		//create CustomerOrder object
 		CustomerOrder customerOrder=new CustomerOrder();
 		customerOrder.setPurchaseDate(new Date());
-		customerOrder.setUser(user);//customerOrder -> user -> customer -> shippingaddress
+		customerOrder.setUser(user);
 		customerOrder.setGrandTotal(grandTotal);
 		if(cartItems.size()>0)
 		customerOrder=cartItemDao.createCustomerOrder(customerOrder);
 
 
-		//Remove all cartitems from the cartItem table
-		//decrement the quantity of the product
-		//add customerorder and List<CartItem> to an model attributes and return "orderdetails"
+		
 
 		for(CartItem cartItem:cartItems){
 			
 		Product product=cartItem.getProduct();
-		product.setQuantity(product.getQuantity() - cartItem.getQuantity());//decrement the product quantity
-		productDao.saveOrUpdate(product);//update product set quantity=7 where id=38
+		product.setQuantity(product.getQuantity() - cartItem.getQuantity());
+		productDao.saveOrUpdate(product);//update 
 		cartItemDao.removeCartItem(cartItem.getItemId());
 		
 		}
-		model.addAttribute("customerorder",customerOrder);//order=[orderId,purchaseDate,grandTotal,User]
+		model.addAttribute("customerorder",customerOrder);
 		model.addAttribute("cartItems",cartItems);
 		session.setAttribute("cartSize", 0);
 		return "cart/orderdetails";

@@ -1,10 +1,12 @@
 package org.monk.controller;
 
+import javax.validation.Valid;
+
 import org.monk.dao.CustomerDao;
 import org.monk.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,13 +20,23 @@ public class CustomerController {
 		return new ModelAndView("customer/registrationform","customer",new Customer());
 	}
 	@RequestMapping(value="/save")
-	public String registerCustomer(@ModelAttribute(name="customer") Customer customer,Model model){
-		if(!customerDao.isEmailUnique(customer.getUser().getEmail())){
-			model.addAttribute("error","Email Id already Exists.. please enter different email address");
-			return "customer/registrationform";
+	public ModelAndView registerCustomer(@Valid @ModelAttribute(name="customer") Customer customer,BindingResult br){
+		
+		if(br.hasErrors()) {
+			ModelAndView model = new ModelAndView("customer/registrationform");
+			model.addObject("customer",customer);
+			return model;
+		}
+		
+		else if(!customerDao.isEmailUnique(customer.getUser().getEmail())){
+			ModelAndView model = new ModelAndView("customer/registrationform");
+			model.addObject("error","Email Id already Exists.. please enter different email address");
+			return model;
+		
+		
 		}
 	   	customerDao.registerCustomer(customer);
-	   	return "customer/login";
+	   	return new ModelAndView("redirect:/customer/login");
 	}
 	
 }

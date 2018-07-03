@@ -33,7 +33,9 @@ public class MainController {
 		List <Product> list = productDao.listAllProducts();
 		model.addObject("list",list);
 		return model;
-	}
+
+		
+}
 	
 	@RequestMapping(value = "/admin/product/update/{productId}",method = RequestMethod.GET)
 	public ModelAndView updateProduct(@PathVariable("productId") int id) {

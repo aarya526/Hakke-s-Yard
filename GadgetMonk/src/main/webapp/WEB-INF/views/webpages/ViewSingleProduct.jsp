@@ -283,7 +283,7 @@ border-bottom:5px solid green;
 				<c:url value = "/cart/addToCart/${productId}" var = "addUrl"></c:url>
 				<form action="${addUrl}" method="post">
 				
-					<input type="number" min = "1" max = "${product.quantity }" class="form-control" placeholder="Enter Quantity" name="requestedQuantity">
+					<input type="number" min = "1"  class="form-control" placeholder="Enter Quantity" name="requestedQuantity">
 			
 					<br>
 				

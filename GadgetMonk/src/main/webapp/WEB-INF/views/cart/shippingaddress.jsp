@@ -288,7 +288,7 @@ $(document).ready(function(){
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<div class = "container-fluid" style = "width:450px; height:auto; background-color:linen; border-radius:10px; margin-top:50px;">
+<div class = "container" style = "width:450px; height:auto; background-color:lightgrey; border-radius:10px; margin-top:50px;">
 <h3>Update Shipping Address......</h3>
 <form:form action = "${pageContext.request.contextPath }/cart/createorder" modelAttribute = "shippingaddress">
  <table class = "table">
@@ -318,6 +318,7 @@ $(document).ready(function(){
    <td><form:input class = "form-control" type = "text" path="zipcode"/>
   </tr>
   <tr>
+  <td></td>
   <td>
   <form:button class = "btn btn-success" type = "submit">Confirm Order</form:button>
   </td>
