@@ -17,6 +17,7 @@ public class CustomerDaoImpl implements CustomerDao{
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
 		public void registerCustomer(Customer customer) {
 			Session session=sessionFactory.getCurrentSession();
 			

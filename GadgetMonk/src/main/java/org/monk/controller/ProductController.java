@@ -43,7 +43,7 @@ public class ProductController {
 
 		
 }
-	
+								
 	@RequestMapping(value = "/admin/product/update/{productId}",method = RequestMethod.GET)
 	public ModelAndView updateProduct(@PathVariable("productId") int id) {
 		
